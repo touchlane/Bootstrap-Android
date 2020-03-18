@@ -1,2 +1,2 @@
 include(":presentation", ":domain", ":data")
-rootProject.name="android-template"
+rootProject.name="android-bootstrap"
