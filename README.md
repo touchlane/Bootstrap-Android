@@ -1,1 +1,1 @@
-# android-template
+# Android Bootstrap
