@@ -5,7 +5,7 @@ import java.util.*
 
 /**
  * The [propsFile] must contain following properties:
- * storeFilePath - the path to the keystore file
+ * storeFile - the path to the keystore file
  * storePassword - store password
  * keyAlias - key alias
  * keyPassword - key password
@@ -14,7 +14,7 @@ fun DefaultSigningConfig.configFrom(propsFile: File) {
     if (propsFile.exists()) {
         val props = Properties()
         props.load(FileInputStream(propsFile))
-        storeFile = File(props.getProperty("storeFilePath"))
+        storeFile = File(props.getProperty("storeFile"))
         storePassword = props.getProperty("storePassword")
         keyAlias = props.getProperty("keyAlias")
         keyPassword = props.getProperty("keyPassword")
