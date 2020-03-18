@@ -1,4 +1,4 @@
-package com.touchlane.android.template
+package com.touchlane.android.bootstrap
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

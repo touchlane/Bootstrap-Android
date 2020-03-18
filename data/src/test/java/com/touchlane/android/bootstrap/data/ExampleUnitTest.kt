@@ -1,4 +1,4 @@
-package com.touchlane.android.template
+package com.touchlane.android.bootstrap.data
 
 import org.junit.Test
 

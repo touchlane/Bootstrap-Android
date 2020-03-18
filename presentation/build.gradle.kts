@@ -8,7 +8,7 @@ android {
     compileSdkVersion(29)
     buildToolsVersion = "29.0.3"
     defaultConfig {
-        applicationId = "com.touchlane.android.template"
+        applicationId = "com.touchlane.android.bootstrap"
         minSdkVersion(21)
         targetSdkVersion(29)
         versionCode = 1
