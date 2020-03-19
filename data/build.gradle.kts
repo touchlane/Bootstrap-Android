@@ -2,6 +2,12 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("android.extensions")
+    id("org.jlleitschuh.gradle.ktlint") version Versions.Plugins.Ktlint
+}
+
+ktlint {
+    android.set(true)
+    disabledRules.set(Ktlint.disabledRules)
 }
 
 android {

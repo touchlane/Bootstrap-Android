@@ -4,6 +4,7 @@ object Versions {
 
     object Plugins {
         const val AndroidBuildTools = "3.5.3"
+        const val Ktlint = "9.2.1"
     }
 
     object Libs {

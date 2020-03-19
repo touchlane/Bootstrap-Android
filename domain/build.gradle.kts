@@ -1,9 +1,10 @@
 plugins {
     kotlin("jvm")
+    id("org.jlleitschuh.gradle.ktlint") version Versions.Plugins.Ktlint
 }
 
-kotlin {
-
+ktlint {
+    disabledRules.set(Ktlint.disabledRules)
 }
 
 dependencies {
