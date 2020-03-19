@@ -25,3 +25,21 @@ allprojects {
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
+
+tasks.create("ktlintCheckAll") {
+    group = "verification"
+    dependsOn(
+        ":domain:ktlintCheck",
+        ":data:ktlintCheck",
+        ":presentation:ktlintCheck"
+    )
+}
+
+tasks.create("jacocoTestReports") {
+    group = "reporting"
+    dependsOn(
+        ":domain:jacocoTestReport",
+        ":data:jacocoTestDebugUnitTestReport",
+        ":presentation:jacocoTestDebugUnitTestReport"
+    )
+}
