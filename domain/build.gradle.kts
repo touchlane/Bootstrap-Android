@@ -1,6 +1,11 @@
 plugins {
     kotlin("jvm")
+    jacoco
     id("org.jlleitschuh.gradle.ktlint") version Versions.Plugins.Ktlint
+}
+
+jacoco {
+    toolVersion = Versions.Libs.Test.JacocoTools
 }
 
 ktlint {
@@ -16,4 +21,15 @@ repositories {
     google()
     jcenter()
     mavenCentral()
+}
+
+tasks.jacocoTestReport {
+
+    dependsOn(tasks["test"])
+
+    reports {
+        xml.isEnabled = false
+        csv.isEnabled = false
+        html.isEnabled = true
+    }
 }

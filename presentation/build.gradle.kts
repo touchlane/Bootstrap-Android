@@ -2,7 +2,12 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    id("com.hiya.jacoco-android")
     id("org.jlleitschuh.gradle.ktlint") version Versions.Plugins.Ktlint
+}
+
+jacoco {
+    toolVersion = Versions.Libs.Test.JacocoTools
 }
 
 ktlint {
