@@ -2,6 +2,11 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    id("com.hiya.jacoco-android")
+}
+
+jacoco {
+    toolVersion = Versions.Libs.Test.JacocoTools
 }
 
 android {

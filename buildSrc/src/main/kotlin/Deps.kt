@@ -4,6 +4,7 @@ object Deps {
 
         const val Kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Kotlin}"
         const val AndroidBuildTools = "com.android.tools.build:gradle:${Versions.Plugins.AndroidBuildTools}"
+        const val JacocoAndroid = "com.hiya:jacoco-android:${Versions.Plugins.JacocoAndroid}"
     }
 
     object Libs {

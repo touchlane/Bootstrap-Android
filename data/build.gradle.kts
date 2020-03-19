@@ -2,6 +2,11 @@ plugins {
     id("com.android.library")
     kotlin("android")
     kotlin("android.extensions")
+    id("com.hiya.jacoco-android")
+}
+
+jacoco {
+    toolVersion = Versions.Libs.Test.JacocoTools
 }
 
 android {
@@ -16,7 +21,7 @@ android {
     }
     buildTypes {
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
