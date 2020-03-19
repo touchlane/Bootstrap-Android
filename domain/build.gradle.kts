@@ -1,14 +1,15 @@
 plugins {
     kotlin("jvm")
     jacoco
+    id("org.jlleitschuh.gradle.ktlint") version Versions.Plugins.Ktlint
 }
 
 jacoco {
     toolVersion = Versions.Libs.Test.JacocoTools
 }
 
-kotlin {
-
+ktlint {
+    disabledRules.set(Ktlint.disabledRules)
 }
 
 dependencies {
