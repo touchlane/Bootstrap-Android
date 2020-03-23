@@ -15,6 +15,16 @@ object Deps {
         const val ConstraintLayout =
             "androidx.constraintlayout:constraintlayout:${Versions.Libs.ConstraintLayout}"
         const val RecyclerView = "androidx.recyclerview:recyclerview:${Versions.Libs.RecyclerView}"
+        const val KtorClient = "io.ktor:ktor-client-okhttp:${Versions.Libs.Ktor}"
+        const val KtorGson = "io.ktor:ktor-client-gson:${Versions.Libs.Ktor}"
+        const val CoroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Libs.Coroutines}"
+        const val CoroutinesJvm = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Libs.Coroutines}"
+        const val ViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Libs.ViewModelKtx}"
+        const val KtorClientJson = "io.ktor:ktor-client-json-jvm:${Versions.Libs.Ktor}"
+        const val Koin = "org.koin:koin-android:${Versions.Libs.Koin}"
+        const val KoinViewModel = "org.koin:koin-android-viewmodel:${Versions.Libs.Koin}"
+        const val LiveEvent = "com.github.hadilq.liveevent:liveevent:${Versions.Libs.LiveEvent}"
+        const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.Libs.LeakCanary}"
 
         object Test {
             const val JUnit = "junit:junit:${Versions.Libs.Test.JUnit}"
