@@ -9,11 +9,19 @@ import com.touchlane.android.bootstrap.domain.posts.PostsRepo
 import com.touchlane.android.bootstrap.domain.users.User
 import com.touchlane.android.bootstrap.domain.users.UsersRepo
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 
 class UserPostsInteractorImplTest {
+
+    private val testPost1 = Post(1, 1, "title1", "body1")
+    private val testPost2 = Post(2, 2, "title2", "body2")
+    private val testUser1 = User(1, "name1", "username1", "email1", "phone1")
+    private val testUser2 = User(2, "name2", "username2", "email2", "phone2")
+    private val testUserPost1 = UserPost(1, 1, "title1", "body1", "username1", "email1")
+    private val testUserPost2 = UserPost(2, 2, "title2", "body2", "username2", "email2")
 
     private lateinit var interactor: UserPostsInteractor
 
@@ -30,7 +38,7 @@ class UserPostsInteractorImplTest {
         whenever(mockPostsRepo.posts()).thenReturn(listOf(testPost1, testPost2))
         whenever(mockUsersRepo.users()).thenReturn(listOf(testUser1, testUser2))
 
-       val result = interactor.userPosts()
+        val result = interactor.userPosts()
 
         assertTrue(result is Result.Success)
         val success = result as Result.Success
@@ -57,15 +65,5 @@ class UserPostsInteractorImplTest {
 
         assertTrue(result is Result.Error)
         assertTrue((result as Result.Error).throwable is ResourceNotFoundException)
-    }
-
-    companion object {
-
-        private val testPost1 = Post(1, 1, "title1", "body1")
-        private val testPost2 = Post(2, 2, "title2", "body2")
-        private val testUser1 = User(1,  "name1", "username1", "email1", "phone1")
-        private val testUser2 = User(2,  "name2", "username2", "email2", "phone2")
-        private val testUserPost1 = UserPost(1, 1, "title1", "body1", "username1", "email1")
-        private val testUserPost2 = UserPost(2, 2, "title2", "body2", "username2", "email2")
     }
 }

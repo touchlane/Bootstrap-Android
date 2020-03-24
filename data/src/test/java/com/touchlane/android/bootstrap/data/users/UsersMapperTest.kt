@@ -1,13 +1,13 @@
 package com.touchlane.android.bootstrap.data.users
 
 import com.touchlane.android.bootstrap.domain.users.User
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class UsersMapperTest {
-    
+
     private val testUserDto1 = UserDto(
-        1, 
+        1,
         "name1",
         "username1",
         "email1",
@@ -25,7 +25,7 @@ class UsersMapperTest {
         ),
         Company(
             "name1",
-        "catchPhrase1",
+            "catchPhrase1",
             "bs1"
         )
     )
@@ -68,9 +68,9 @@ class UsersMapperTest {
         "email2",
         "phone2"
     )
-    
+
     private val mapper = UsersMapper()
-    
+
     @Test
     fun testMap() {
         val output = mapper.map(testInput)

@@ -1,8 +1,7 @@
 package com.touchlane.android.bootstrap.data.posts
 
-import com.touchlane.android.bootstrap.data.comments.CommentsMapperTest
 import com.touchlane.android.bootstrap.domain.posts.Post
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class PostsMapperTest {

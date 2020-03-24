@@ -19,7 +19,7 @@ class UserPostsPresentationModel(
     init {
         viewModelScope.launch {
             loading.value = Loading.YES
-            when(val result = userPostsInteractor.userPosts()) {
+            when (val result = userPostsInteractor.userPosts()) {
                 is Result.Success -> userPosts.value = result.value
                 is Result.Error -> errorMessage.value = result.throwable.message
             }

@@ -18,7 +18,7 @@ class CommentsPresentationModel(
 
     init {
         viewModelScope.launch {
-            when(val result = commentsInteractor.commentsToPost(postId)) {
+            when (val result = commentsInteractor.commentsToPost(postId)) {
                 is Result.Success -> comments.value = result.value
                 is Result.Error -> errorMessage.value = result.throwable.message
             }

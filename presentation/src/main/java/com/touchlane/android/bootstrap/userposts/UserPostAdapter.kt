@@ -36,7 +36,6 @@ class UserPostAdapter(
         }
     }
 
-
     class UserPostViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val title = itemView.title

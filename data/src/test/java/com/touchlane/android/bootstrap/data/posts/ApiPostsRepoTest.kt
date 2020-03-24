@@ -7,7 +7,7 @@ import com.touchlane.android.bootstrap.data.Mapper
 import com.touchlane.android.bootstrap.domain.posts.Post
 import com.touchlane.android.bootstrap.domain.posts.PostsRepo
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 
