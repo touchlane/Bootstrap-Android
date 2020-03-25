@@ -42,7 +42,7 @@ data class Address(
 data class Geo(
     @SerializedName("lat")
     val lat: String,
-    @SerializedName("long")
+    @SerializedName("lng")
     val long: String
 )
 

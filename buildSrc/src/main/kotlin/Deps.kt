@@ -29,6 +29,7 @@ object Deps {
         object Test {
             const val JUnit = "junit:junit:${Versions.Libs.Test.JUnit}"
             const val MockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.Libs.Test.MockitoKotlin}"
+            const val KtorMock = "io.ktor:ktor-client-mock-jvm:${Versions.Libs.Ktor}"
         }
 
         object AndroidTest {
