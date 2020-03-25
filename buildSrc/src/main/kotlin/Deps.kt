@@ -3,7 +3,8 @@ object Deps {
     object Plugins {
 
         const val Kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.Kotlin}"
-        const val AndroidBuildTools = "com.android.tools.build:gradle:${Versions.Plugins.AndroidBuildTools}"
+        const val AndroidBuildTools =
+            "com.android.tools.build:gradle:${Versions.Plugins.AndroidBuildTools}"
         const val JacocoAndroid = "com.hiya:jacoco-android:${Versions.Plugins.JacocoAndroid}"
     }
 
@@ -17,24 +18,40 @@ object Deps {
         const val RecyclerView = "androidx.recyclerview:recyclerview:${Versions.Libs.RecyclerView}"
         const val KtorClient = "io.ktor:ktor-client-okhttp:${Versions.Libs.Ktor}"
         const val KtorGson = "io.ktor:ktor-client-gson:${Versions.Libs.Ktor}"
-        const val CoroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Libs.Coroutines}"
-        const val CoroutinesJvm = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Libs.Coroutines}"
-        const val ViewModelKtx = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Libs.ViewModelKtx}"
+        const val CoroutinesAndroid =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Libs.Coroutines}"
+        const val CoroutinesJvm =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Libs.Coroutines}"
+        const val ViewModelKtx =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.Libs.ViewModelKtx}"
         const val KtorClientJson = "io.ktor:ktor-client-json-jvm:${Versions.Libs.Ktor}"
         const val Koin = "org.koin:koin-android:${Versions.Libs.Koin}"
         const val KoinViewModel = "org.koin:koin-android-viewmodel:${Versions.Libs.Koin}"
         const val LiveEvent = "com.github.hadilq.liveevent:liveevent:${Versions.Libs.LiveEvent}"
-        const val LeakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.Libs.LeakCanary}"
+        const val LeakCanary =
+            "com.squareup.leakcanary:leakcanary-android:${Versions.Libs.LeakCanary}"
 
         object Test {
             const val JUnit = "junit:junit:${Versions.Libs.Test.JUnit}"
-            const val MockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.Libs.Test.MockitoKotlin}"
+            const val MockitoKotlin =
+                "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.Libs.Test.MockitoKotlin}"
             const val KtorMock = "io.ktor:ktor-client-mock-jvm:${Versions.Libs.Ktor}"
         }
 
         object AndroidTest {
             const val JUnitExt = "androidx.test.ext:junit:${Versions.Libs.AndroidTest.JUnitExt}"
-            const val EspressoCore = "androidx.test.espresso:espresso-core:${Versions.Libs.AndroidTest.EspressoCore}"
+            const val EspressoCore =
+                "androidx.test.espresso:espresso-core:${Versions.Libs.AndroidTest.Espresso}"
+            const val TestCore = "androidx.test:core:${Versions.Libs.AndroidTest.AndroidxTest}"
+            const val TestRunner = "androidx.test:runner:${Versions.Libs.AndroidTest.AndroidxTest}"
+            const val TestRules = "androidx.test:rules:${Versions.Libs.AndroidTest.AndroidxTest}"
+            const val MockitoCore = "org.mockito:mockito-core:${Versions.Libs.AndroidTest.Mockito}"
+            const val MockitoAndroid =
+                "org.mockito:mockito-android:${Versions.Libs.AndroidTest.Mockito}"
+            const val EspressoIntents =
+                "androidx.test.espresso:espresso-intents:${Versions.Libs.AndroidTest.Espresso}"
+            const val Orchestrator =
+                "androidx.test:orchestrator:${Versions.Libs.AndroidTest.AndroidxTest}"
         }
     }
 }

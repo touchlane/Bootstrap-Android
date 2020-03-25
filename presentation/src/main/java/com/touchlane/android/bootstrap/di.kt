@@ -1,5 +1,7 @@
 package com.touchlane.android.bootstrap
 
+import android.content.Context
+import com.touchlane.android.bootstrap.comments.CommentsActivity
 import com.touchlane.android.bootstrap.comments.CommentsPresentationModel
 import com.touchlane.android.bootstrap.data.Mapper
 import com.touchlane.android.bootstrap.data.Strings
@@ -17,6 +19,7 @@ import com.touchlane.android.bootstrap.domain.userposts.UserPostsInteractor
 import com.touchlane.android.bootstrap.domain.userposts.UserPostsInteractorImpl
 import com.touchlane.android.bootstrap.domain.users.User
 import com.touchlane.android.bootstrap.domain.users.UsersRepo
+import com.touchlane.android.bootstrap.userposts.UserPostsActivity
 import com.touchlane.android.bootstrap.userposts.UserPostsPresentationModel
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
@@ -33,10 +36,6 @@ val appModule = module {
 
     single<Strings> {
         StringsImpl(get())
-    }
-
-    factory {
-        Router()
     }
 }
 
@@ -107,6 +106,13 @@ val userPostsModule = module {
         UserPostsInteractorImpl(get(), get())
     }
 
+    scope<UserPostsActivity> {
+
+        scoped<Router> { (context: Context) ->
+            SimpleRouter(context)
+        }
+    }
+
     viewModel {
         UserPostsPresentationModel(get())
     }
@@ -136,5 +142,12 @@ val commentsModule = module {
 
     viewModel { (id: Int) ->
         CommentsPresentationModel(get(), id)
+    }
+
+    scope<CommentsActivity> {
+
+        scoped<Router> { (context: Context) ->
+            SimpleRouter(context)
+        }
     }
 }

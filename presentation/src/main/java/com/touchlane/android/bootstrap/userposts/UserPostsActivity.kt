@@ -10,20 +10,23 @@ import com.touchlane.android.bootstrap.Destination
 import com.touchlane.android.bootstrap.R
 import com.touchlane.android.bootstrap.Router
 import kotlinx.android.synthetic.main.activity_user_posts.*
-import org.koin.android.ext.android.inject
+import org.koin.android.scope.lifecycleScope
 import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class UserPostsActivity : AppCompatActivity(R.layout.activity_user_posts) {
 
     private lateinit var adapter: UserPostAdapter
-    private val router: Router by inject()
+    private val router: Router by lifecycleScope.inject {
+        parametersOf(this)
+    }
     private val presentationModel: UserPostsPresentationModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         adapter = UserPostAdapter({
-            router.goTo(this, Destination.Comments(it.id))
+            router.goTo(Destination.Comments(it.id))
         })
         userPosts.layoutManager = LinearLayoutManager(this)
         userPosts.adapter = adapter

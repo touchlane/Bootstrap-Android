@@ -9,7 +9,7 @@ import com.touchlane.android.bootstrap.R
 import com.touchlane.android.bootstrap.Router
 import com.touchlane.android.bootstrap.extra
 import kotlinx.android.synthetic.main.activity_comments.*
-import org.koin.android.ext.android.inject
+import org.koin.android.scope.lifecycleScope
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -19,7 +19,9 @@ class CommentsActivity : AppCompatActivity(R.layout.activity_comments) {
     private val presentationModel: CommentsPresentationModel by viewModel {
         parametersOf(postId)
     }
-    private val router: Router by inject()
+    private val router: Router by lifecycleScope.inject {
+        parametersOf(this)
+    }
     private lateinit var adapter: CommentsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -25,6 +25,7 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments = mapOf("clearPackageData" to "true")
     }
     signingConfigs {
         val homeDir = System.getProperty("user.home")
@@ -73,4 +74,12 @@ dependencies {
     testImplementation(Deps.Libs.Test.JUnit)
     androidTestImplementation(Deps.Libs.AndroidTest.JUnitExt)
     androidTestImplementation(Deps.Libs.AndroidTest.EspressoCore)
+    androidTestImplementation(Deps.Libs.AndroidTest.TestCore)
+    androidTestImplementation(Deps.Libs.AndroidTest.TestRunner)
+    androidTestImplementation(Deps.Libs.AndroidTest.TestRules)
+    androidTestImplementation(Deps.Libs.AndroidTest.MockitoCore)
+    androidTestImplementation(Deps.Libs.AndroidTest.MockitoAndroid)
+    androidTestImplementation(Deps.Libs.AndroidTest.EspressoIntents)
+    androidTestImplementation(Deps.Libs.Test.KtorMock)
+    androidTestUtil(Deps.Libs.AndroidTest.Orchestrator)
 }

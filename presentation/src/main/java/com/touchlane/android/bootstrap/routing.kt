@@ -4,9 +4,15 @@ import android.content.Context
 import android.content.Intent
 import com.touchlane.android.bootstrap.comments.CommentsActivity
 
-class Router {
+interface Router {
+    fun goTo(destination: Destination)
+}
 
-    fun goTo(context: Context, destination: Destination) {
+class SimpleRouter(
+    private val context: Context
+) : Router {
+
+    override fun goTo(destination: Destination) {
         destination.land(context)
     }
 }

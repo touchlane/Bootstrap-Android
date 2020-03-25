@@ -30,7 +30,9 @@ object Versions {
 
         object AndroidTest {
             const val JUnitExt = "1.1.0"
-            const val EspressoCore = "3.2.0"
+            const val Espresso = "3.2.0"
+            const val AndroidxTest = "1.2.0"
+            const val Mockito = "3.3.3"
         }
     }
 }
