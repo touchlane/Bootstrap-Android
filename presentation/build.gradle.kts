@@ -30,7 +30,7 @@ android {
     signingConfigs {
         val homeDir = System.getProperty("user.home")
         register("release") {
-            configFrom(file("$homeDir/.signing/bootstrap-release-signing.properties"))
+            configFrom(file("$homeDir/.signing/release-signing.properties"))
         }
     }
     buildTypes {

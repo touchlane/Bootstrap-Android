@@ -1,10 +1,10 @@
 object Versions {
 
-    const val Kotlin = "1.3.61"
+    const val Kotlin = "1.3.71"
 
     object Plugins {
 
-        const val AndroidBuildTools = "3.5.3"
+        const val AndroidBuildTools = "3.6.0"
         const val JacocoAndroid = "0.2"
         const val Ktlint = "9.2.1"
     }
