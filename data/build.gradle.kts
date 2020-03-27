@@ -39,6 +39,12 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Deps.Libs.KotlinStdLib)
+    implementation(Deps.Libs.CoroutinesAndroid)
+    implementation(Deps.Libs.KtorClient)
+    implementation(Deps.Libs.KtorGson)
+    implementation(Deps.Libs.KtorClientJson)
     implementation(project(":domain"))
     testImplementation(Deps.Libs.Test.JUnit)
+    testImplementation(Deps.Libs.Test.MockitoKotlin)
+    testImplementation(Deps.Libs.Test.KtorMock)
 }
