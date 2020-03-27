@@ -16,9 +16,9 @@ object Versions {
         const val ConstraintLayout = "1.1.3"
         const val ViewModelKtx = "2.2.0"
         const val RecyclerView = "1.1.0"
-        const val Ktor = "1.3.1"
-        const val Coroutines = "1.3.3"
-        const val Koin = "2.1.4"
+        const val Ktor = "1.3.2"
+        const val Coroutines = "1.3.5"
+        const val Koin = "2.1.5"
         const val LiveEvent = "1.2.0"
         const val LeakCanary = "2.2"
 
