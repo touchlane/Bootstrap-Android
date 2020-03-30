@@ -14,6 +14,10 @@ ktlint {
 
 dependencies {
     implementation(Deps.Libs.KotlinStdLib)
+    implementation(Deps.Libs.RxJava)
+    implementation(Deps.Libs.Retrofit)
+    implementation(Deps.Libs.RetrofitGsonConverter)
+    implementation(Deps.Libs.RetrofitRxJavaAdapter)
     testImplementation(Deps.Libs.Test.JUnit)
 }
 

@@ -39,6 +39,10 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Deps.Libs.KotlinStdLib)
+    implementation(Deps.Libs.RxJava)
+    implementation(Deps.Libs.Retrofit)
+    implementation(Deps.Libs.RetrofitGsonConverter)
+    implementation(Deps.Libs.RetrofitRxJavaAdapter)
     implementation(project(":domain"))
     testImplementation(Deps.Libs.Test.JUnit)
 }
