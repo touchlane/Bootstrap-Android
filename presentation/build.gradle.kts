@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
+    kotlin("kapt")
     kotlin("android.extensions")
     id("com.hiya.jacoco-android")
     id("org.jlleitschuh.gradle.ktlint") version Versions.Plugins.Ktlint
@@ -25,6 +26,7 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments = mapOf("clearPackageData" to "true")
     }
     signingConfigs {
         val homeDir = System.getProperty("user.home")
@@ -38,10 +40,17 @@ android {
             isShrinkResources = true
             signingConfig = signingConfigs.getByName("release")
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
@@ -52,9 +61,28 @@ dependencies {
     implementation(Deps.Libs.ConstraintLayout)
     implementation(Deps.Libs.CoreKtx)
     implementation(Deps.Libs.RecyclerView)
+    implementation(Deps.Libs.RxJava)
+    implementation(Deps.Libs.RxAndroid)
+    implementation(Deps.Libs.Retrofit)
+    implementation(Deps.Libs.RetrofitRxJavaAdapter)
+    implementation(Deps.Libs.RetrofitGsonConverter)
+    implementation(Deps.Libs.Moxy)
+    implementation(Deps.Libs.MoxyAndroidX)
+    implementation(Deps.Libs.MoxyKtx)
+    kapt(Deps.Libs.MoxyCompiler)
+    implementation(Deps.Libs.Dagger)
+    kapt(Deps.Libs.DaggerCompiler)
     implementation(project(":domain"))
     implementation(project(":data"))
+    debugImplementation(Deps.Libs.LeakCanary)
     testImplementation(Deps.Libs.Test.JUnit)
     androidTestImplementation(Deps.Libs.AndroidTest.JUnitExt)
     androidTestImplementation(Deps.Libs.AndroidTest.EspressoCore)
+    androidTestImplementation(Deps.Libs.AndroidTest.TestCore)
+    androidTestImplementation(Deps.Libs.AndroidTest.TestRunner)
+    androidTestImplementation(Deps.Libs.AndroidTest.TestRules)
+    androidTestImplementation(Deps.Libs.AndroidTest.MockitoCore)
+    androidTestImplementation(Deps.Libs.AndroidTest.MockitoAndroid)
+    kaptAndroidTest(Deps.Libs.DaggerCompiler)
+    androidTestUtil(Deps.Libs.AndroidTest.Orchestrator)
 }
