@@ -200,17 +200,17 @@ interface UserPostsComponent {
 }
 
 @Module
-class UserPostsModule(
+open class UserPostsModule(
     private val activityContext: Context
 ) {
 
     @Provides
     @ViewScope
-    fun router(): Router = SimpleRouter(activityContext)
+    open fun router(): Router = SimpleRouter(activityContext)
 
     @Provides
     @ViewScope
-    fun userPostsInteractor(postsRepo: PostsRepo, usersRepo: UsersRepo): UserPostsInteractor =
+    open fun userPostsInteractor(postsRepo: PostsRepo, usersRepo: UsersRepo): UserPostsInteractor =
         UserPostsInteractorImpl(
             postsRepo,
             usersRepo
@@ -225,7 +225,7 @@ class UserPostsModule(
         UserPostsPresenterProvider(UserPostsPresenter(userPostsInteractor, scheduler))
 }
 
-class UserPostsPresenterProvider(
+open class UserPostsPresenterProvider(
     private val presenter: UserPostsPresenter
 ) : Provider<UserPostsPresenter> {
 

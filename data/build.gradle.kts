@@ -45,4 +45,6 @@ dependencies {
     implementation(Deps.Libs.RetrofitRxJavaAdapter)
     implementation(project(":domain"))
     testImplementation(Deps.Libs.Test.JUnit)
+    testImplementation(Deps.Libs.Test.MockitoKotlin)
+    testImplementation(Deps.Libs.Test.MockWebServer)
 }

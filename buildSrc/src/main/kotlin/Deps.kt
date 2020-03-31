@@ -37,12 +37,23 @@ object Deps {
             const val JUnit = "junit:junit:${Versions.Libs.Test.JUnit}"
             const val MockitoKotlin =
                 "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.Libs.Test.MockitoKotlin}"
+            const val MockWebServer = "com.squareup.okhttp3:mockwebserver:${Versions.Libs.Test.MockWebServer}"
         }
 
         object AndroidTest {
             const val JUnitExt = "androidx.test.ext:junit:${Versions.Libs.AndroidTest.JUnitExt}"
             const val EspressoCore =
-                "androidx.test.espresso:espresso-core:${Versions.Libs.AndroidTest.EspressoCore}"
+                "androidx.test.espresso:espresso-core:${Versions.Libs.AndroidTest.Espresso}"
+            const val TestCore = "androidx.test:core:${Versions.Libs.AndroidTest.AndroidxTest}"
+            const val TestRunner = "androidx.test:runner:${Versions.Libs.AndroidTest.AndroidxTest}"
+            const val TestRules = "androidx.test:rules:${Versions.Libs.AndroidTest.AndroidxTest}"
+            const val MockitoCore = "org.mockito:mockito-core:${Versions.Libs.AndroidTest.Mockito}"
+            const val MockitoAndroid =
+                "org.mockito:mockito-android:${Versions.Libs.AndroidTest.Mockito}"
+            const val EspressoIntents =
+                "androidx.test.espresso:espresso-intents:${Versions.Libs.AndroidTest.Espresso}"
+            const val Orchestrator =
+                "androidx.test:orchestrator:${Versions.Libs.AndroidTest.AndroidxTest}"
         }
     }
 }

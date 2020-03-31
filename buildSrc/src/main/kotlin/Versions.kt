@@ -25,14 +25,19 @@ object Versions {
         const val LeakCanary = "2.2"
 
         object Test {
+
             const val JUnit = "4.13"
             const val MockitoKotlin = "2.2.0"
             const val JacocoTools = "0.8.5"
+            const val MockWebServer = "4.4.0"
         }
 
         object AndroidTest {
+
             const val JUnitExt = "1.1.0"
-            const val EspressoCore = "3.2.0"
+            const val Espresso = "3.2.0"
+            const val AndroidxTest = "1.2.0"
+            const val Mockito = "3.3.3"
         }
     }
 }
